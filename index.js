@@ -5,6 +5,10 @@ const express = require('express');
 const app = express();
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
+/********************
+ * Short URL Redirect
+ */
+
 // Set the root address to a static address
 app.get('/', async (req, res, next) => {
     await dynamoDb.put({ // Track link
@@ -26,7 +30,7 @@ app.get('/:slug', async (req, res, next) => { // The slug is passed to params. M
         let link = await dynamoDb.get({ // DynamoDB get record by slug
             TableName: 'short-url-link',
             Key: { slug: req.params.slug }
-        }).promise();
+        }).promise(); // Returns a payload in the form of { slug: 'aa', url: 'https://example.com' }
 
         if (!link.Item) return next(); // If not found, 404
 
