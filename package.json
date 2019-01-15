@@ -1,0 +1,25 @@
+{
+  "name": "naked-bike-redirect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0",
+    "deploy": "serverless deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/djmeph/naked-bike-redirect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/djmeph/naked-bike-redirect#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "moment": "^2.22.2",
+    "serverless-http": "^1.8.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.388.0"
+  }
+}
